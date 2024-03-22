@@ -1,0 +1,24 @@
+{
+  "name": "com.yunako.gateway",
+  "version": "0.1.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yuminako/Gateway.git"
+  },
+  "author": "Yuminako Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yuminako/Gateway/issues"
+  },
+  "homepage": "https://github.com/yuminako/Gateway#readme",
+  "dependencies": {
+    "body-parser": "^1.20.2",
+    "express": "^4.19.1"
+  }
+}
