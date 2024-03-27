@@ -19,6 +19,26 @@ app.get('/', (req, res) => {
     res.sendFile(__dirname + `/template/index.html`);
 });
 
+app.get('/nodes', (req, res) => {
+    const numNodes = gateway.getNodes();
+    res.send(`${numNodes}`);
+});
+
+app.get('/gateways', (req, res) => {
+    const numGateways = gateway.getGateways();
+    res.send(`${numGateways}`);
+});
+
+app.post('/send_message', (req, res) => {
+    const data = req.body;
+    console.log(data);
+});
+
+app.get('/send_message', (req, res) => {
+    const logs = gateway.send_message();
+    res.json(logs);
+});
+
 // Route pour récupérer les logs
 app.get('/logs', (req, res) => {
     const logs = gateway.getLogs(); // Utilisation de la méthode getLogs de la classe Gateway
@@ -27,4 +47,9 @@ app.get('/logs', (req, res) => {
 
 server.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+});
+// Autoriser toutes les origines CORS
+app.use((req, res, next) => {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+    next();
 });

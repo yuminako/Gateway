@@ -5,9 +5,9 @@ class Node {
         this.port = port;
     }
 
-    sendDataToGateway(data) {
-        // Logique pour envoyer des données à la passerelle
-        console.log(`Sending data to gateway from node ${this.ip}:${this.port}: ${data}`);
+    receiveDataFromGateway(data) {
+        console.log(`Received data from gateway: ${data}`);
+        // Traiter les données reçues de la gateway
     }
 }
 
